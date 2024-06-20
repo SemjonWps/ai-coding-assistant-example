@@ -36,11 +36,4 @@ export class HeroesComponent implements OnInit {
     this.heroService.deleteHero(hero.id).subscribe();
   }
 
-  generateHero(): void {
-    console.log('generateHero');
-    this.heroService.generateHero().subscribe((hero) => {
-      console.log(hero);
-      this.heroes.push(hero);
-    });
-  }
 }

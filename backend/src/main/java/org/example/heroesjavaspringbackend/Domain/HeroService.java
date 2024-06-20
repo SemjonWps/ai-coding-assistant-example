@@ -79,29 +79,7 @@ public class HeroService {
         final var indexFirstName = randomWrapper.nextInt(existingHeroNames.size());
         final var indexLastName = randomWrapper.nextInt(existingHeroNames.size());
         // final var name = generateHeroName(existingHeroNames, indexFirstName);
-        final var name = generateHeroName(existingHeroNames, indexFirstName, indexLastName);
+        final var name = "dummy name";
         return new Hero(name, "Earth", 180, localDateWrapper.now());
-    }
-
-    /**
-     * Generates a hero name by combining the first name and family name from the
-     * given list of hero names.
-     * If the list is empty, the default name "John Doe" is returned.
-     *
-     * @param heroNames         the list of hero names
-     * @param indexToFirstName  the index of the hero name to use for the first name
-     * @param indexToFamilyName the index of the hero name to use for the family
-     *                          name
-     * @return the generated hero name
-     */
-    public String generateHeroName(List<String> heroNames, int indexToFirstName, int indexToFamilyName) {
-        if (heroNames.isEmpty()) {
-            return "John Doe";
-        }
-
-        String firstName = heroNames.get(indexToFirstName).split(" ")[0];
-        String familyName = heroNames.get(indexToFamilyName).split(" ")[1];
-
-        return firstName + " " + familyName;
     }
 }

@@ -17,31 +17,4 @@ public class HeroServiceTest {
     private final HeroService heroService = new HeroService(heroRepository, new LocalDateWrapper(),
             new RandomWrapper());
 
-    @Test
-    void generateHeroName() {
-        // Arrange
-        final var heroNames = List.of("Mickey Mouse", "Donald Duck", "Goofy Goof");
-        final var indexToFirstName = 1;
-        final var indexToFamilyName = 2;
-
-        // Act
-        final var result = heroService.generateHeroName(heroNames, indexToFirstName, indexToFamilyName);
-
-        // Assert
-        assertThat(result).isEqualTo("Donald Goof");
-    }
-
-    @Test
-    void generateHeroName_whenListIsEmpty_returnsJohnDoe() {
-        // Arrange
-        final var heroNames = Collections.<String>emptyList();
-        final var indexToFirstName = 1;
-        final var indexToFamilyName = 2;
-
-        // Act
-        final var result = heroService.generateHeroName(heroNames, indexToFirstName, indexToFamilyName);
-
-        // Assert
-        assertThat(result).isEqualTo("John Doe");
-    }
 }

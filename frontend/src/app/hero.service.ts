@@ -76,15 +76,6 @@ export class HeroService {
     );
   }
 
-  generateHero(): Observable<Hero> {
-    return this.http
-      .post<Hero>(`${this.heroesUrl}/generateHero`, this.httpOptions)
-      .pipe(
-        tap((newHero: Hero) => this.log(`generated hero w/ id=${newHero.id}`)),
-        catchError(this.handleError<Hero>('generateHero'))
-      );
-  }
-
   /** DELETE: delete the hero from the server */
   deleteHero(id: number): Observable<Hero> {
     const url = `${this.heroesUrl}/${id}`;

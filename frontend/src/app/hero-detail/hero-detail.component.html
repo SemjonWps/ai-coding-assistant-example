@@ -1,0 +1,49 @@
+<div *ngIf="hero">
+  <h2>{{ hero.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{ hero.id }}</div>
+
+  <form #heroForm="ngForm" class="settings">
+    <div>
+      <label for="hero-name">Hero name</label>
+      <input
+        id="hero-name"
+        [(ngModel)]="hero.name"
+        placeholder="Hero name"
+        name="name"
+      />
+    </div>
+
+    <div>
+      <label for="hero-hometown">Hero Hometown</label>
+      <input
+        id="hero-hometown"
+        [(ngModel)]="hero.birthplace"
+        placeholder="Hero birthplace"
+        name="birthplace"
+      />
+    </div>
+
+    <div>
+      <label for="hero-height">Hero Height</label>
+      <input
+        id="hero-height"
+        [(ngModel)]="hero.height"
+        placeholder="Hero height"
+        name="height"
+      />
+    </div>
+
+    <div>
+      <label for="hero-date-of-birth">Date of Birth</label>
+      <input
+        id="hero-date-of-birth"
+        [(ngModel)]="hero.dateOfBirth"
+        placeholder="Date of Birth"
+        name="dateOfBirth"
+      />
+    </div>
+    <div>Formatted Date: {{ hero.dateOfBirth | date : "dd.MM.yyyy" }}</div>
+  </form>
+  <button type="button" (click)="goBack()">go back</button>
+  <button type="button" (click)="save()">save</button>
+</div>
